@@ -9,9 +9,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED" >
                 <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-                <property name="url" value="jdbc:sqlserver://DESKTOP-DOJLBNK\MSSQLTDB:1433;databaseName=ComerdorUniversitario;serverTimezone=UTC"/>   
+                <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=ComedorUniversitario;encrypt=true;trustServerCertificate=true;"/>   
                 <property name="username" value="sa"/>    
-                <property name="password" value="Zkorpio_235460"/>
+                <property name="password" value="491v4ll.p#sa^TC"/>
                 <property name="poolMaximumActiveConnections" value="50"/>
             </dataSource>
         </environment>
