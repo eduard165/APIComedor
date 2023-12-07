@@ -18,7 +18,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     </environments>
     
     <mappers> 
+<<<<<<< HEAD
        <mapper resource="mybatis/mapper/AutenticacionMapper.xml"/> 
        <mapper resource="mybatis/mapper/ProductoMapper.xml"/> 
+=======
+        <mapper resource="mybatis/mapper/AutenticacionMapper.xml"/> 
+        <mapper resource="mybatis/mapper/UsuarioMapper.xml"/> 
+>>>>>>> 5e0c021587c58db81c8f5b5782840719f8c49fd0
     </mappers>
 </configuration>
