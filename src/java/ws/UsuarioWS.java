@@ -49,5 +49,4 @@ public class UsuarioWS {
         return UsuarioDAO.obtenerUsuario(usuario);
     }
     
-    
 }
