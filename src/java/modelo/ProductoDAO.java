@@ -8,6 +8,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.pojo.Producto;
+import modelo.pojo.VentasPorCliente;
 import org.apache.ibatis.session.SqlSession;
 
 /**
@@ -19,21 +20,69 @@ public class ProductoDAO {
     public static List<Producto> obtenerProductoPorNombreProvedor(Producto producto) {
         List<Producto>respuesta = new ArrayList();
         SqlSession conexionDB = mybatis.MyBatisUtil.getSession();
-        System.out.println(producto.getNombre_producto());
+       
         if (conexionDB != null){
             try {
                 respuesta=conexionDB.selectList("productos.buscarPorNombre", producto);
-                System.out.println("Longitud de lista"+respuesta.size());
-                if (respuesta.size() > 0){
-                    System.out.println("si jalaaaa");
-                }
             } catch (Exception e) {
+                e.printStackTrace();
             }finally{
+                conexionDB.close();         
             }
         }
        
         return respuesta;
         
     }
+
+    public static List obtenerVentasPorProductos() {
+        List<Producto>respuesta = new ArrayList<>();
+        SqlSession conexionDB = mybatis.MyBatisUtil.getSession();
+        
+        if (conexionDB != null){
+            try {
+                respuesta = conexionDB.selectList("productos.obtenerPorVentas");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally{
+                conexionDB.close();
+            }
+        }
+        return respuesta;
+    }
+
+    public static List obtenerReporteVentasPorProveedor(Integer proveedor_id) {
+        List<Producto> respuesta = new ArrayList<>();
+        SqlSession conexionDB = mybatis.MyBatisUtil.getSession();
+        
+        if (conexionDB != null){
+            try {
+                respuesta = conexionDB.selectList("productos.obtenerPorVentas",proveedor_id);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally{
+                conexionDB.close();
+            }
+        }
+        return respuesta;
+    }
+
+    public static List obtenerReporteVentasPorTipoCliente() {
+        List<VentasPorCliente> respuesta = new ArrayList<>();
+        SqlSession conexionDB = mybatis.MyBatisUtil.getSession();
+        
+         if (conexionDB != null){
+            try {
+                respuesta = conexionDB.selectList("productos.obtenerReporteVentasPorTipoCliente");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally{
+                conexionDB.close();
+            }
+        }
+        return respuesta;
+    }
+        
+    
     
 }

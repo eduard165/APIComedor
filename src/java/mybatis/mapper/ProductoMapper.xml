@@ -11,4 +11,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             #{nombre_provedor, mode=IN, jdbcType=VARCHAR}
         )}
     </select>
+    
+    <select id="obtenerPorVentas" resultType="modelo.pojo.Producto" statementType="CALLABLE">
+        {CALL sps_getObtenerVentasPorProducto ()} 
+    </select>
+    
+    <select id="obtenerReporteVentasProovedor" parameterType="int" resultType="modelo.pojo.Producto" statementType="CALLABLE">
+         {CALL sps_getReporteVentasPorProveedor (#{proveedor_id, mode=IN , jdbcType=INTEGER})} 
+    </select>
+    <select id="obtenerReporteVentasPorTipoCliente" resultType="modelo.pojo.VentasPorCliente">
+           {CALL sps_getReporteVentasPorTipoCliente ()}
+    </select>
 </mapper>
