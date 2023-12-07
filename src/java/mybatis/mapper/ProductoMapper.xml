@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="productos">
+    <select id="buscarPorNombre" parameterType="modelo.pojo.Producto" resultType="modelo.pojo.Producto" statementType="CALLABLE">
+        {CALL sps_getObtenerProductosInventario ( 
+            #{nombre_producto, mode=IN, jdbcType=VARCHAR}, 
+            #{nombre_provedor, mode=IN, jdbcType=VARCHAR}
+        )}
+    </select>
+</mapper>

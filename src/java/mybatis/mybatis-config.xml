@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
                 <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
                 <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=ComedorUniversitario;encrypt=true;trustServerCertificate=true;"/>   
                 <property name="username" value="sa"/>    
-                <property name="password" value="491v4ll.p#sa^TC"/>
+                <property name="password" value="sxdc6tv54h0v2"/>
                 <property name="poolMaximumActiveConnections" value="50"/>
             </dataSource>
         </environment>
@@ -19,5 +19,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     
     <mappers> 
        <mapper resource="mybatis/mapper/AutenticacionMapper.xml"/> 
+       <mapper resource="mybatis/mapper/ProductoMapper.xml"/> 
     </mappers>
 </configuration>
