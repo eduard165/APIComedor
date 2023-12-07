@@ -7,6 +7,7 @@ package modelo;
 
 import modelo.pojo.RespuestaUsuario;
 import modelo.pojo.Usuario;
+import modelo.pojo.Venta;
 import mybatis.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 
@@ -74,4 +75,5 @@ public class UsuarioDAO {
 
         return respuesta;
     }
+    
 }

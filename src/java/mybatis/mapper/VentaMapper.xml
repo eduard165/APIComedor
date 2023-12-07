@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="venta">
+    
+    <insert id="registrar" parameterType="modelo.pojo.Venta" statementType="CALLABLE">
+        {CALL spi_ventas_productos_ventas(
+            #{total, mode=IN, jdbcType=DECIMAL},
+            #{cliente, mode=IN, jdbcType=NVARCHAR},
+            #{FK_usuario_id, mode=IN, jdbcType=INTEGER},
+            #{cantidad, mode=IN, jdbcType=INTEGER},
+            #{FK_producto_id, mode=IN, jdbcType=INTEGER},
+            #{codeState, mode=OUT, jdbcType=INTEGER},
+            #{messageState, mode=OUT, jdbcType=NVARCHAR},
+            #{newId, mode=OUT, jdbcType=INTEGER}
+        )}
+    </insert>
+    
+</mapper>
