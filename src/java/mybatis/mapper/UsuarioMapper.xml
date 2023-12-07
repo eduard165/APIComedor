@@ -20,4 +20,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         )}
     </insert>
     
+    <delete id="eliminar" parameterType="modelo.pojo.Usuario" statementType="CALLABLE">
+        {CALL spe_administracion_usuarios(
+            #{usuario_id, mode=IN, jdbcType=VARCHAR},
+            #{codeState, mode=OUT, jdbcType=INTEGER},
+            #{messageState, mode=OUT, jdbcType=NVARCHAR}
+        )}
+    </delete>
+    
 </mapper>
