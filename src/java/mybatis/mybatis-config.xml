@@ -9,29 +9,19 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED" >
                 <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-                <property name="url" value="jdbc:sqlserver://DESKTOP-DOJLBNK\MSSQLTDB:1433;databaseName=ComedorUniversitario;encrypt=true;trustServerCertificate=true;"/>   
-                <property name="username" value="sa"/>    
-<<<<<<< HEAD
-                <property name="password" value="Zkorpio_235460"/>
-=======
-                <property name="password" value="sxdc6tv54h0v2"/>
->>>>>>> 564c0a87d493c75eb066673df3367491277bb040
+                <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=ComedorUniversitario;encrypt=true;trustServerCertificate=true;"/>   
+                <property name="username" value="usrComedorUniversitario_administrador"/>    
+                <property name="password" value="3LHB8xvS8HgxQQq"/>
                 <property name="poolMaximumActiveConnections" value="50"/>
             </dataSource>
         </environment>
     </environments>
     
     <mappers> 
-<<<<<<< HEAD
        <mapper resource="mybatis/mapper/AutenticacionMapper.xml"/> 
        <mapper resource="mybatis/mapper/ProductoMapper.xml"/> 
-=======
         <mapper resource="mybatis/mapper/AutenticacionMapper.xml"/> 
         <mapper resource="mybatis/mapper/UsuarioMapper.xml"/> 
-<<<<<<< HEAD
         <mapper resource="mybatis/mapper/VentaMapper.xml"/>
-=======
->>>>>>> 5e0c021587c58db81c8f5b5782840719f8c49fd0
->>>>>>> 564c0a87d493c75eb066673df3367491277bb040
     </mappers>
 </configuration>
