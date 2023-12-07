@@ -76,4 +76,25 @@ public class UsuarioDAO {
         return respuesta;
     }
     
+    public static RespuestaUsuario editarUsuario(Usuario usuario) {
+        SqlSession session = MyBatisUtil.getSession();
+        RespuestaUsuario respuesta = new RespuestaUsuario();
+
+        if (session != null) {
+            try {
+                session.update("usuario.editar", usuario);
+                session.commit();
+
+                respuesta.setCodeState(usuario.getCodeState());
+                respuesta.setMessageState(usuario.getMessageState());
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                session.close();
+            }
+        }
+
+        return respuesta;
+    }
+    
 }
