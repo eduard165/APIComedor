@@ -11,24 +11,24 @@ package modelo.pojo;
  */
 public class RespuestaUsuario {
 
-    private int codeState;
+    private Integer codeState;
     private String messageState;
-    private int newId;
+    private Integer newId;
 
     public RespuestaUsuario() {
     }
 
-    public RespuestaUsuario(int codeState, String messageState, int newId) {
+    public RespuestaUsuario(Integer codeState, String messageState, Integer newId) {
         this.codeState = codeState;
         this.messageState = messageState;
         this.newId = newId;
     }
 
-    public int getCodeState() {
+    public Integer getCodeState() {
         return codeState;
     }
 
-    public void setCodeState(int codeState) {
+    public void setCodeState(Integer codeState) {
         this.codeState = codeState;
     }
 
@@ -40,11 +40,11 @@ public class RespuestaUsuario {
         this.messageState = messageState;
     }
 
-    public int getNewId() {
+    public Integer getNewId() {
         return newId;
     }
 
-    public void setNewId(int newId) {
+    public void setNewId(Integer newId) {
         this.newId = newId;
     }
 

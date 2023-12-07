@@ -18,14 +18,14 @@ public class Usuario {
     private String apellido_paterno;
     private String apellido_materno;
     private Integer FK_tipo_usuario_id;
-    private int codeState;
+    private Integer codeState;
     private String messageState;
-    private int newId;
+    private Integer newId;
 
     public Usuario() {
     }
 
-    public Usuario(Integer usuario_id, String usuario, String contrasena, String nombre, String apellido_paterno, String apellido_materno, Integer FK_tipo_usuario_id, int codeState, String messageState, int newId) {
+    public Usuario(Integer usuario_id, String usuario, String contrasena, String nombre, String apellido_paterno, String apellido_materno, Integer FK_tipo_usuario_id, String messageState) {
         this.usuario_id = usuario_id;
         this.usuario = usuario;
         this.contrasena = contrasena;
@@ -33,9 +33,7 @@ public class Usuario {
         this.apellido_paterno = apellido_paterno;
         this.apellido_materno = apellido_materno;
         this.FK_tipo_usuario_id = FK_tipo_usuario_id;
-        this.codeState = codeState;
         this.messageState = messageState;
-        this.newId = newId;
     }
 
     public Integer getUsuario_id() {
@@ -94,11 +92,11 @@ public class Usuario {
         this.FK_tipo_usuario_id = FK_tipo_usuario_id;
     }
 
-    public int getCodeState() {
+    public Integer getCodeState() {
         return codeState;
     }
 
-    public void setCodeState(int codeState) {
+    public void setCodeState(Integer codeState) {
         this.codeState = codeState;
     }
 
@@ -110,11 +108,11 @@ public class Usuario {
         this.messageState = messageState;
     }
 
-    public int getNewId() {
+    public Integer getNewId() {
         return newId;
     }
 
-    public void setNewId(int newId) {
+    public void setNewId(Integer newId) {
         this.newId = newId;
     }
 

@@ -40,6 +40,7 @@ public class UsuarioDAO {
         if (session != null) {
             try {
                 session.insert("usuario.registrar", usuario);
+                session.commit();
 
                 respuesta.setCodeState(usuario.getCodeState());
                 respuesta.setMessageState(usuario.getMessageState());
@@ -53,6 +54,47 @@ public class UsuarioDAO {
 
         return respuesta;
     }
-    
 
+    public static RespuestaUsuario eliminarUsuario(Usuario usuario) {
+        SqlSession session = MyBatisUtil.getSession();
+        RespuestaUsuario respuesta = new RespuestaUsuario();
+
+        if (session != null) {
+            try {
+                session.delete("usuario.eliminar", usuario);
+                session.commit();
+
+                respuesta.setCodeState(usuario.getCodeState());
+                respuesta.setMessageState(usuario.getMessageState());
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                session.close();
+            }
+        }
+
+        return respuesta;
+    }
+    
+    public static RespuestaUsuario editarUsuario(Usuario usuario) {
+        SqlSession session = MyBatisUtil.getSession();
+        RespuestaUsuario respuesta = new RespuestaUsuario();
+
+        if (session != null) {
+            try {
+                session.update("usuario.editar", usuario);
+                session.commit();
+
+                respuesta.setCodeState(usuario.getCodeState());
+                respuesta.setMessageState(usuario.getMessageState());
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                session.close();
+            }
+        }
+
+        return respuesta;
+    }
+    
 }
