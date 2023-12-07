@@ -10,6 +10,7 @@ package modelo.pojo;
  * @author Dell
  */
 public class Usuario {
+
     private Integer usuario_id;
     private String usuario;
     private String contrasena;
@@ -17,11 +18,14 @@ public class Usuario {
     private String apellido_paterno;
     private String apellido_materno;
     private Integer FK_tipo_usuario_id;
+    private int codeState;
+    private String messageState;
+    private int newId;
 
     public Usuario() {
     }
 
-    public Usuario(Integer usuario_id, String usuario, String contrasena, String nombre, String apellido_paterno, String apellido_materno, Integer FK_tipo_usuario_id) {
+    public Usuario(Integer usuario_id, String usuario, String contrasena, String nombre, String apellido_paterno, String apellido_materno, Integer FK_tipo_usuario_id, int codeState, String messageState, int newId) {
         this.usuario_id = usuario_id;
         this.usuario = usuario;
         this.contrasena = contrasena;
@@ -29,6 +33,9 @@ public class Usuario {
         this.apellido_paterno = apellido_paterno;
         this.apellido_materno = apellido_materno;
         this.FK_tipo_usuario_id = FK_tipo_usuario_id;
+        this.codeState = codeState;
+        this.messageState = messageState;
+        this.newId = newId;
     }
 
     public Integer getUsuario_id() {
@@ -86,6 +93,29 @@ public class Usuario {
     public void setFK_tipo_usuario_id(Integer FK_tipo_usuario_id) {
         this.FK_tipo_usuario_id = FK_tipo_usuario_id;
     }
-    
-    
+
+    public int getCodeState() {
+        return codeState;
+    }
+
+    public void setCodeState(int codeState) {
+        this.codeState = codeState;
+    }
+
+    public String getMessageState() {
+        return messageState;
+    }
+
+    public void setMessageState(String messageState) {
+        this.messageState = messageState;
+    }
+
+    public int getNewId() {
+        return newId;
+    }
+
+    public void setNewId(int newId) {
+        this.newId = newId;
+    }
+
 }
