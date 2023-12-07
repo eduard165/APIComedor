@@ -18,7 +18,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class MyBatisUtil {
     
      //Recursos para realizar la conexion con la base de datos
-    public static final String RESOURCE = "mybatis/mybatis-config.xml";
+    public static final String RESOURCE = "/mybatis/mybatis-config.xml";
     public static final String ENVIRONMENT = "development";
     
     //Método para la conexion con la base de datos
