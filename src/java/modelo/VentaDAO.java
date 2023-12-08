@@ -5,6 +5,9 @@
  */
 package modelo;
 
+import java.util.HashMap;
+import java.util.List;
+import modelo.pojo.DetalleVenta;
 import modelo.pojo.RespuestaUsuario;
 import modelo.pojo.Venta;
 import mybatis.MyBatisUtil;
@@ -24,15 +27,14 @@ public class VentaDAO {
             try {
                 session.insert("venta.registrar", venta);
                 session.commit();
-                if (venta.getDetalles().size()>0) {
-                    for(int i=0;i>=venta.getDetalles().size();i++){
-                        session.insert("venta.registrarDetalle", venta);
-                        session.commit();
-                    }
+                System.out.println(venta.getDetalles().size());
+                if (venta.getDetalles().size()!=0) {
+                    insertarDetalles(venta.getNewId(), venta.getDetalles());
+                    respuesta.setCodeState(venta.getCodeState());
+                    respuesta.setMessageState(venta.getMessageState());
+                    respuesta.setNewId(venta.getNewId());
                 }
-                respuesta.setCodeState(venta.getCodeState());
-                respuesta.setMessageState(venta.getMessageState());
-                respuesta.setNewId(venta.getNewId());
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }finally{
@@ -42,4 +44,28 @@ public class VentaDAO {
     
         return respuesta;
     }
+        
+        public static void insertarDetalles(Integer newId, List<DetalleVenta> ventas){
+         SqlSession session = MyBatisUtil.getSession();
+        
+        if(session != null){
+            try {
+                if (ventas.size()>0) {
+                    for(int i=0;i>=ventas.size();i++){
+                        DetalleVenta detalle = ventas.get(i);
+                        
+                        detalle.setFK_venta_id(newId);
+                        System.out.println(detalle.getFK_venta_id() + detalle.getCantidad());
+                        session.insert("venta.registrarDetalle", detalle);
+                        session.commit();
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally{
+                session.close();
+            }
+        }   
+        
+        }
 }

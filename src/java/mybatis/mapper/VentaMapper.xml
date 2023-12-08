@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         )}
     </insert>
     
-    <insert id="registrarDetalle" parameterType="modelo.pojo.Venta" statementType="CALLABLE">
+    <insert id="registrarDetalle" parameterType="modelo.pojo.DetalleVenta" statementType="CALLABLE">
         {CALL spi_ventas_productos_detalles_ventas(
             #{cantidad, mode=IN, jdbcType=DECIMAL},
             #{FK_venta_id, mode=IN, jdbcType=NVARCHAR},
