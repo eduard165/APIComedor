@@ -11,7 +11,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             #{total, mode=IN, jdbcType=DECIMAL},
             #{cliente, mode=IN, jdbcType=NVARCHAR},
             #{FK_usuario_id, mode=IN, jdbcType=INTEGER},
-            #{cantidad, mode=IN, jdbcType=INTEGER},
+            #{codeState, mode=OUT, jdbcType=INTEGER},
+            #{messageState, mode=OUT, jdbcType=NVARCHAR},
+            #{newId, mode=OUT, jdbcType=INTEGER}
+        )}
+    </insert>
+    
+    <insert id="registrarDetalle" parameterType="modelo.pojo.DetalleVenta" statementType="CALLABLE">
+        {CALL spi_ventas_productos_detalles_ventas(
+            #{cantidad, mode=IN, jdbcType=DECIMAL},
+            #{FK_venta_id, mode=IN, jdbcType=NVARCHAR},
             #{FK_producto_id, mode=IN, jdbcType=INTEGER},
             #{codeState, mode=OUT, jdbcType=INTEGER},
             #{messageState, mode=OUT, jdbcType=NVARCHAR},

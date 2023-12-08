@@ -5,6 +5,8 @@
  */
 package modelo.pojo;
 
+import java.util.List;
+
 /**
  *
  * @author Dell
@@ -15,8 +17,7 @@ public class Venta {
     private Float total;
     private String cliente;
     private Integer FK_usuario_id;
-    private Integer cantidad;
-    private Integer FK_producto_id; 
+    private List<DetalleVenta> detalles;
     private int codeState;
     private String messageState;
     private int newId;
@@ -24,18 +25,18 @@ public class Venta {
     public Venta() {
     }
 
-    public Venta(Integer venta_id, Float total, String cliente, Integer FK_usuario_id, Integer cantidad, Integer FK_producto_id, int codeState, String messageState, int newId) {
+    public Venta(Integer venta_id, Float total, String cliente, Integer FK_usuario_id, List<DetalleVenta> detalles, int codeState, String messageState, int newId) {
         this.venta_id = venta_id;
         this.total = total;
         this.cliente = cliente;
         this.FK_usuario_id = FK_usuario_id;
-        this.cantidad = cantidad;
-        this.FK_producto_id = FK_producto_id;
+        this.detalles = detalles;
         this.codeState = codeState;
         this.messageState = messageState;
         this.newId = newId;
     }
 
+  
     public Integer getVenta_id() {
         return venta_id;
     }
@@ -92,20 +93,12 @@ public class Venta {
         this.newId = newId;
     }
 
-    public Integer getCantidad() {
-        return cantidad;
+    public List<DetalleVenta> getDetalles() {
+        return detalles;
     }
 
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
+    public void setDetalles(List<DetalleVenta> detalles) {
+        this.detalles = detalles;
     }
-
-    public Integer getFK_producto_id() {
-        return FK_producto_id;
-    }
-
-    public void setFK_producto_id(Integer FK_producto_id) {
-        this.FK_producto_id = FK_producto_id;
-    }
-
+    
 }
