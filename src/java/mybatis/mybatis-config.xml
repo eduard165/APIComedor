@@ -10,8 +10,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
             <dataSource type="POOLED" >
                 <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
                 <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=ComedorUniversitario;encrypt=true;trustServerCertificate=true;"/>   
-                <property name="username" value="usrComedorUniversitario_administrador"/>    
-                <property name="password" value="3LHB8xvS8HgxQQq"/>
+                <property name="username" value="usrComedorUnivesitario_atencion_clientes"/>    
+                <property name="password" value="mS5bc0OFVpWJGMD"/>
                 <property name="poolMaximumActiveConnections" value="50"/>
             </dataSource>
         </environment>

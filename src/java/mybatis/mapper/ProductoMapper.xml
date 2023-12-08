@@ -6,20 +6,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="productos">
     <select id="buscarPorNombre" parameterType="modelo.pojo.Producto" resultType="modelo.pojo.Producto" statementType="CALLABLE">
-        {CALL sps_getObtenerProductosInventario ( 
+        {CALL sps_get_productos_inventario ( 
             #{nombre_producto, mode=IN, jdbcType=VARCHAR}, 
             #{nombre_provedor, mode=IN, jdbcType=VARCHAR}
         )}
     </select>
     
     <select id="obtenerPorVentas" resultType="modelo.pojo.Producto" statementType="CALLABLE">
-        {CALL sps_getObtenerVentasPorProducto ()} 
+        {CALL sps_get_ventas_por_producto()} 
     </select>
     
     <select id="obtenerReporteVentasProovedor" parameterType="int" resultType="modelo.pojo.Producto" statementType="CALLABLE">
-         {CALL sps_getReporteVentasPorProveedor (#{proveedor_id, mode=IN , jdbcType=INTEGER})} 
+        {CALL sps_get_reporte_ventas_por_proveedor (#{proveedor_id, mode=IN , jdbcType=INTEGER})} 
     </select>
     <select id="obtenerReporteVentasPorTipoCliente" resultType="modelo.pojo.VentasPorCliente">
-           {CALL sps_getReporteVentasPorTipoCliente ()}
+        {CALL sps_get_reporte_ventas_por_tipo_cliente ()}
     </select>
 </mapper>
