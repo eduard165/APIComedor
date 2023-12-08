@@ -57,7 +57,7 @@ public class ProductoDAO {
         
         if (conexionDB != null){
             try {
-                respuesta = conexionDB.selectList("productos.obtenerPorVentas",proveedor_id);
+                respuesta = conexionDB.selectList("productos.obtenerReporteVentasProovedor",proveedor_id);
             } catch (Exception e) {
                 e.printStackTrace();
             }finally{
