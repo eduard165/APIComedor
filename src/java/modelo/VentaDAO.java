@@ -24,7 +24,12 @@ public class VentaDAO {
             try {
                 session.insert("venta.registrar", venta);
                 session.commit();
-                
+                if (venta.getDetalles().size()>0) {
+                    for(int i=0;i>=venta.getDetalles().size();i++){
+                        session.insert("venta.registrarDetalle", venta);
+                        session.commit();
+                    }
+                }
                 respuesta.setCodeState(venta.getCodeState());
                 respuesta.setMessageState(venta.getMessageState());
                 respuesta.setNewId(venta.getNewId());
